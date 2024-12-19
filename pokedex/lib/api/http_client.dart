@@ -6,9 +6,9 @@ part 'http_client.g.dart';
 
 @riverpod
 Dio httpClient(HttpClientRef ref) {
-  // TODO: create options here, and feed them to `Dio`
-  final client = Dio();
-  // TODO: cleanup on dispose...
+  final options = BaseOptions(baseUrl: "https://pokeapi.co/api/v2/pokemon");
+  final client = Dio(options);
+  ref.onDispose(client.close);
 
   final logger = TalkerDioLogger(
     talker: talker,
