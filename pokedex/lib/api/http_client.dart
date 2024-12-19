@@ -7,13 +7,11 @@ part 'http_client.g.dart';
 @riverpod
 Dio httpClient(HttpClientRef ref) {
   // TODO: create options here, and feed them to `Dio`
-  final client = Dio();
+  final client = Dio(
+    BaseOptions(baseUrl: "https://pokeapi.co/api/v2")
+  );
   // TODO: cleanup on dispose...
 
-  final logger = TalkerDioLogger(
-    talker: talker,
-  );
-  client.interceptors.add(logger);
-
+  ref.onDispose(client.close);
   return client;
 }
