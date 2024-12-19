@@ -1,5 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:pokedex/logger.dart';
+import 'package:pokedex/src/pages/PokemonDetail.dart';
+import 'package:pokedex/src/pages/favourite_page.dart';
+import 'package:pokedex/src/pages/home_page.dart';
+import 'package:pokedex/src/provider/favorites_provider.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 final router = GoRouter(
@@ -7,6 +11,20 @@ final router = GoRouter(
     TalkerRouteObserver(talker),
   ],
   routes: [
-    // TODO: add routes here...!
+    GoRoute(
+      path: '/',
+      name: 'home',
+      builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      path: "/favourite",
+      name: "favourite",
+      builder: (context, state) => const FavouritePage(),
+    ),
+    GoRoute(
+      path: "/detail",
+      name: "detail",
+      builder: (context, state) => const DetailPokemon(),
+    )
   ],
 );

@@ -1,26 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'http_client.dart';
+part of 'favorites_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'b8029d47b7c1498fa19e18a6bd2b7acd6041911b';
+String _$favouriteHash() => r'270a21b260eac74a1e9471b1ed33fa8571f58c5c';
 
-/// See also [httpClient].
-@ProviderFor(httpClient)
-final httpClientProvider = AutoDisposeProvider<Dio>.internal(
-  httpClient,
-  name: r'httpClientProvider',
+/// See also [Favourite].
+@ProviderFor(Favourite)
+final favouriteProvider =
+    AutoDisposeNotifierProvider<Favourite, List<PokemonModel>>.internal(
+  Favourite.new,
+  name: r'favouriteProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$httpClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$favouriteHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef HttpClientRef = AutoDisposeProviderRef<Dio>;
+typedef _$Favourite = AutoDisposeNotifier<List<PokemonModel>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
