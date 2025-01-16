@@ -1,4 +1,5 @@
 
-import 'package:pokedex/api/models/Pokemon_details.dart';
 
-typedef PokemonSnippetMOdel = PokemonDetailsApiModel;
+import 'package:pokedex/api/models/pokemon_snippet.dart';
+
+typedef PokemonSnippetModel = PokemonSnippetApiModel;

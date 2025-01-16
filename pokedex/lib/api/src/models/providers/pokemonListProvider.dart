@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'pokemonListProvider.g.dart';
 
 @riverpod
-FutureOr<PokemonSnippetModel> pokemonSnippet(PokemonsnippetapiRef ref) async{
+FutureOr<PokemonSnippetModel> pokemonSnippet(PokemonSnippetRef ref) async{
    final api = ref.watch(pokemonsnippetapiProvider);
   return api.fetchPokemon();
 }

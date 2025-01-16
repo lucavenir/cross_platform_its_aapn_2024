@@ -20,7 +20,7 @@ class PokemonDetails{
   final Dio client;
 
   Future<PokemonDetailsApiModel> fetchPokemonDetails() async{
-    final response = await client.get<Map<String, Object>>("");
+    final response = await client.get<Map<String, Object>>("pokemon/1");
     final model = PokemonDetailsApiModel.fromJson(response.data!);
     return model;
   }

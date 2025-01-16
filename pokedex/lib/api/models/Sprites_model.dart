@@ -8,7 +8,7 @@ part 'Sprites_model.g.dart';
 class StritesApiModel with _$StritesApiModel{
   const factory StritesApiModel(
     {
-      required String frontDefault 
+      required String frontDefault,
     }
   ) = _StritesApiModel;
 factory StritesApiModel.fromJson(Map<String, dynamic> json)
