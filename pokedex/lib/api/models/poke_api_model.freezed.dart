@@ -20,7 +20,11 @@ PokeApiModel _$PokeApiModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PokeApiModel {
-  ResultsPokeApiModel get results => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
+  int get weight => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  PokeSpritesApiModel get sprites => throw _privateConstructorUsedError;
 
   /// Serializes this PokeApiModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,9 +42,14 @@ abstract class $PokeApiModelCopyWith<$Res> {
           PokeApiModel value, $Res Function(PokeApiModel) then) =
       _$PokeApiModelCopyWithImpl<$Res, PokeApiModel>;
   @useResult
-  $Res call({ResultsPokeApiModel results});
+  $Res call(
+      {int id,
+      int height,
+      int weight,
+      String name,
+      PokeSpritesApiModel sprites});
 
-  $ResultsPokeApiModelCopyWith<$Res> get results;
+  $PokeSpritesApiModelCopyWith<$Res> get sprites;
 }
 
 /// @nodoc
@@ -58,13 +67,33 @@ class _$PokeApiModelCopyWithImpl<$Res, $Val extends PokeApiModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? results = null,
+    Object? id = null,
+    Object? height = null,
+    Object? weight = null,
+    Object? name = null,
+    Object? sprites = null,
   }) {
     return _then(_value.copyWith(
-      results: null == results
-          ? _value.results
-          : results // ignore: cast_nullable_to_non_nullable
-              as ResultsPokeApiModel,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      sprites: null == sprites
+          ? _value.sprites
+          : sprites // ignore: cast_nullable_to_non_nullable
+              as PokeSpritesApiModel,
     ) as $Val);
   }
 
@@ -72,9 +101,9 @@ class _$PokeApiModelCopyWithImpl<$Res, $Val extends PokeApiModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ResultsPokeApiModelCopyWith<$Res> get results {
-    return $ResultsPokeApiModelCopyWith<$Res>(_value.results, (value) {
-      return _then(_value.copyWith(results: value) as $Val);
+  $PokeSpritesApiModelCopyWith<$Res> get sprites {
+    return $PokeSpritesApiModelCopyWith<$Res>(_value.sprites, (value) {
+      return _then(_value.copyWith(sprites: value) as $Val);
     });
   }
 }
@@ -87,10 +116,15 @@ abstract class _$$PokeApiModelImplCopyWith<$Res>
       __$$PokeApiModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ResultsPokeApiModel results});
+  $Res call(
+      {int id,
+      int height,
+      int weight,
+      String name,
+      PokeSpritesApiModel sprites});
 
   @override
-  $ResultsPokeApiModelCopyWith<$Res> get results;
+  $PokeSpritesApiModelCopyWith<$Res> get sprites;
 }
 
 /// @nodoc
@@ -106,13 +140,33 @@ class __$$PokeApiModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? results = null,
+    Object? id = null,
+    Object? height = null,
+    Object? weight = null,
+    Object? name = null,
+    Object? sprites = null,
   }) {
     return _then(_$PokeApiModelImpl(
-      results: null == results
-          ? _value.results
-          : results // ignore: cast_nullable_to_non_nullable
-              as ResultsPokeApiModel,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      sprites: null == sprites
+          ? _value.sprites
+          : sprites // ignore: cast_nullable_to_non_nullable
+              as PokeSpritesApiModel,
     ));
   }
 }
@@ -120,17 +174,30 @@ class __$$PokeApiModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PokeApiModelImpl with DiagnosticableTreeMixin implements _PokeApiModel {
-  const _$PokeApiModelImpl({required this.results});
+  const _$PokeApiModelImpl(
+      {required this.id,
+      required this.height,
+      required this.weight,
+      required this.name,
+      required this.sprites});
 
   factory _$PokeApiModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PokeApiModelImplFromJson(json);
 
   @override
-  final ResultsPokeApiModel results;
+  final int id;
+  @override
+  final int height;
+  @override
+  final int weight;
+  @override
+  final String name;
+  @override
+  final PokeSpritesApiModel sprites;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'PokeApiModel(results: $results)';
+    return 'PokeApiModel(id: $id, height: $height, weight: $weight, name: $name, sprites: $sprites)';
   }
 
   @override
@@ -138,7 +205,11 @@ class _$PokeApiModelImpl with DiagnosticableTreeMixin implements _PokeApiModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'PokeApiModel'))
-      ..add(DiagnosticsProperty('results', results));
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('height', height))
+      ..add(DiagnosticsProperty('weight', weight))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('sprites', sprites));
   }
 
   @override
@@ -146,12 +217,17 @@ class _$PokeApiModelImpl with DiagnosticableTreeMixin implements _PokeApiModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PokeApiModelImpl &&
-            (identical(other.results, results) || other.results == results));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.sprites, sprites) || other.sprites == sprites));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, results);
+  int get hashCode =>
+      Object.hash(runtimeType, id, height, weight, name, sprites);
 
   /// Create a copy of PokeApiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -170,14 +246,26 @@ class _$PokeApiModelImpl with DiagnosticableTreeMixin implements _PokeApiModel {
 }
 
 abstract class _PokeApiModel implements PokeApiModel {
-  const factory _PokeApiModel({required final ResultsPokeApiModel results}) =
-      _$PokeApiModelImpl;
+  const factory _PokeApiModel(
+      {required final int id,
+      required final int height,
+      required final int weight,
+      required final String name,
+      required final PokeSpritesApiModel sprites}) = _$PokeApiModelImpl;
 
   factory _PokeApiModel.fromJson(Map<String, dynamic> json) =
       _$PokeApiModelImpl.fromJson;
 
   @override
-  ResultsPokeApiModel get results;
+  int get id;
+  @override
+  int get height;
+  @override
+  int get weight;
+  @override
+  String get name;
+  @override
+  PokeSpritesApiModel get sprites;
 
   /// Create a copy of PokeApiModel
   /// with the given fields replaced by the non-null parameter values.

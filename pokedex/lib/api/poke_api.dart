@@ -1,39 +1,33 @@
-// TODO: create the api class here, then wrap it with riverpod as always
 import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex/api/http_client.dart';
 import 'package:pokedex/api/models/poke_api_model.dart';
+import 'package:pokedex/api/models/poke_list_api_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
 part 'poke_api.g.dart';
 
 @riverpod
-PokeApi pokeApi(PokeApiRef ref) {
+PokeApi pokeApi(Ref ref) {
   final client = ref.watch(httpClientProvider);
-  final api = PokeApi(client);
-  return api;
+  return PokeApi(client);
 }
 
 class PokeApi {
   const PokeApi(this.client);
   final Dio client;
 
-  Future<PokeApiModel> fetchAllPoke() async {
-    final response =await client.get<Map<String, Object?>>("");
-     final model = PokeApiModel.fromJson(response.data!);       
-    return model;
+  Future<PokeListApiModel> fetchPokemons() async {
+    final result = await client.get(
+      'https://pokeapi.co/api/v2/pokemon?limit=10000',
+    );
+    print(result);
+    return PokeListApiModel.fromJson(result.data);
+  }
+
+  Future<PokeApiModel> fetchPokemon(int id) async {
+    final result = await client.get(
+      "https://pokeapi.co/api/v2/pokemon/$id",
+    );
+    return PokeApiModel.fromJson(result.data);
   }
 }
-
-
-/* List<MioModello risultato(Ref ref)async{
-  final List <ModellodelleApi> result = await.api.logger
-
-  return[
-    for (final esterno in results)
-    MioModello(
-    
-    id: trasformazioneSuggerita(esterno.url)
-    name: esterno.name
-    ) 
-  ]
-} */

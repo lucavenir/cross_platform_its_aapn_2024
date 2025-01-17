@@ -6,7 +6,7 @@ part of 'poke_api.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$pokeApiHash() => r'985d227b2001475e434da205347b7a07e441f94d';
+String _$pokeApiHash() => r'cd9db1712fb7a2cbaac6fd3c3651be907aad281b';
 
 /// See also [pokeApi].
 @ProviderFor(pokeApi)

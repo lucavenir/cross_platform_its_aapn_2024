@@ -6,8 +6,7 @@ part 'http_client.g.dart';
 
 @riverpod
 Dio httpClient(HttpClientRef ref) {
-  final client = Dio(
-      BaseOptions(baseUrl: 'https://pokeapi.co/api/v2/pokemon?limit=10000'));
+  final client = Dio();
   ref.onDispose(client.close);
 
   final logger = TalkerDioLogger(
