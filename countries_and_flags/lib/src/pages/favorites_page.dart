@@ -21,6 +21,7 @@ class FavoritesPage extends ConsumerWidget {
               leading: Text(favorite.id),
               title: Text(favorite.longName),
               trailing: IconButton(
+                color: Colors.red,
                 onPressed: () {
                   ref.read(favoriteNotifierProvider.notifier).remove(favorite);
                 },
