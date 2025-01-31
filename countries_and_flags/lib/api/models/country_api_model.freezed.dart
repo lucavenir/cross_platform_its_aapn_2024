@@ -21,7 +21,7 @@ CountryApiModel _$CountryApiModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CountryApiModel {
   CountryFlagsApiModel get flags => throw _privateConstructorUsedError;
-  CountryNameApiModel get names => throw _privateConstructorUsedError;
+  CountryNameApiModel get name => throw _privateConstructorUsedError;
   String get cca2 => throw _privateConstructorUsedError;
 
   /// Serializes this CountryApiModel to a JSON map.
@@ -41,10 +41,10 @@ abstract class $CountryApiModelCopyWith<$Res> {
       _$CountryApiModelCopyWithImpl<$Res, CountryApiModel>;
   @useResult
   $Res call(
-      {CountryFlagsApiModel flags, CountryNameApiModel names, String cca2});
+      {CountryFlagsApiModel flags, CountryNameApiModel name, String cca2});
 
   $CountryFlagsApiModelCopyWith<$Res> get flags;
-  $CountryNameApiModelCopyWith<$Res> get names;
+  $CountryNameApiModelCopyWith<$Res> get name;
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$CountryApiModelCopyWithImpl<$Res, $Val extends CountryApiModel>
   @override
   $Res call({
     Object? flags = null,
-    Object? names = null,
+    Object? name = null,
     Object? cca2 = null,
   }) {
     return _then(_value.copyWith(
@@ -71,9 +71,9 @@ class _$CountryApiModelCopyWithImpl<$Res, $Val extends CountryApiModel>
           ? _value.flags
           : flags // ignore: cast_nullable_to_non_nullable
               as CountryFlagsApiModel,
-      names: null == names
-          ? _value.names
-          : names // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as CountryNameApiModel,
       cca2: null == cca2
           ? _value.cca2
@@ -96,9 +96,9 @@ class _$CountryApiModelCopyWithImpl<$Res, $Val extends CountryApiModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CountryNameApiModelCopyWith<$Res> get names {
-    return $CountryNameApiModelCopyWith<$Res>(_value.names, (value) {
-      return _then(_value.copyWith(names: value) as $Val);
+  $CountryNameApiModelCopyWith<$Res> get name {
+    return $CountryNameApiModelCopyWith<$Res>(_value.name, (value) {
+      return _then(_value.copyWith(name: value) as $Val);
     });
   }
 }
@@ -112,12 +112,12 @@ abstract class _$$CountryApiModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CountryFlagsApiModel flags, CountryNameApiModel names, String cca2});
+      {CountryFlagsApiModel flags, CountryNameApiModel name, String cca2});
 
   @override
   $CountryFlagsApiModelCopyWith<$Res> get flags;
   @override
-  $CountryNameApiModelCopyWith<$Res> get names;
+  $CountryNameApiModelCopyWith<$Res> get name;
 }
 
 /// @nodoc
@@ -134,7 +134,7 @@ class __$$CountryApiModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? flags = null,
-    Object? names = null,
+    Object? name = null,
     Object? cca2 = null,
   }) {
     return _then(_$CountryApiModelImpl(
@@ -142,9 +142,9 @@ class __$$CountryApiModelImplCopyWithImpl<$Res>
           ? _value.flags
           : flags // ignore: cast_nullable_to_non_nullable
               as CountryFlagsApiModel,
-      names: null == names
-          ? _value.names
-          : names // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as CountryNameApiModel,
       cca2: null == cca2
           ? _value.cca2
@@ -160,7 +160,7 @@ class _$CountryApiModelImpl
     with DiagnosticableTreeMixin
     implements _CountryApiModel {
   const _$CountryApiModelImpl(
-      {required this.flags, required this.names, required this.cca2});
+      {required this.flags, required this.name, required this.cca2});
 
   factory _$CountryApiModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CountryApiModelImplFromJson(json);
@@ -168,13 +168,13 @@ class _$CountryApiModelImpl
   @override
   final CountryFlagsApiModel flags;
   @override
-  final CountryNameApiModel names;
+  final CountryNameApiModel name;
   @override
   final String cca2;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CountryApiModel(flags: $flags, names: $names, cca2: $cca2)';
+    return 'CountryApiModel(flags: $flags, name: $name, cca2: $cca2)';
   }
 
   @override
@@ -183,7 +183,7 @@ class _$CountryApiModelImpl
     properties
       ..add(DiagnosticsProperty('type', 'CountryApiModel'))
       ..add(DiagnosticsProperty('flags', flags))
-      ..add(DiagnosticsProperty('names', names))
+      ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('cca2', cca2));
   }
 
@@ -193,13 +193,13 @@ class _$CountryApiModelImpl
         (other.runtimeType == runtimeType &&
             other is _$CountryApiModelImpl &&
             (identical(other.flags, flags) || other.flags == flags) &&
-            (identical(other.names, names) || other.names == names) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.cca2, cca2) || other.cca2 == cca2));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, flags, names, cca2);
+  int get hashCode => Object.hash(runtimeType, flags, name, cca2);
 
   /// Create a copy of CountryApiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -221,7 +221,7 @@ class _$CountryApiModelImpl
 abstract class _CountryApiModel implements CountryApiModel {
   const factory _CountryApiModel(
       {required final CountryFlagsApiModel flags,
-      required final CountryNameApiModel names,
+      required final CountryNameApiModel name,
       required final String cca2}) = _$CountryApiModelImpl;
 
   factory _CountryApiModel.fromJson(Map<String, dynamic> json) =
@@ -230,7 +230,7 @@ abstract class _CountryApiModel implements CountryApiModel {
   @override
   CountryFlagsApiModel get flags;
   @override
-  CountryNameApiModel get names;
+  CountryNameApiModel get name;
   @override
   String get cca2;
 

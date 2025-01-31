@@ -10,7 +10,7 @@ part 'country_api_model.g.dart';
 class CountryApiModel with _$CountryApiModel {
   const factory CountryApiModel({
     required CountryFlagsApiModel flags,
-    required CountryNameApiModel names,
+    required CountryNameApiModel name,
     required String cca2,
   }) = _CountryApiModel;
   factory CountryApiModel.fromJson(Map<String, dynamic> json) =>
