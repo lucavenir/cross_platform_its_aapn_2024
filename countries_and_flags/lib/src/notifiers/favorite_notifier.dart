@@ -9,6 +9,10 @@ class FavoriteNotifier extends _$FavoriteNotifier {
     return [];
   }
 
+  void toggle(CountryModel model) {
+    state.contains(model) ? remove(model) : add(model);
+  }
+
   void add(CountryModel model) {
     state = [
       model,

@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'countries_provider.g.dart';
 
 @riverpod
-FutureOr<List<CountryModel>> countries(Ref ref, String? query) {
+FutureOr<List<CountryModel>> countries(Ref ref, [String? query]) {
   final api = ref.watch(countriesApiProvider);
 
   if (query == null || query.isEmpty) {

@@ -6,7 +6,7 @@ part of 'countries_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$countriesHash() => r'abdbc1c8eb474f2898213a734800db7950b758d4';
+String _$countriesHash() => r'35930376dc1805e336ad3f9518c07861291b2049';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -39,9 +39,9 @@ class CountriesFamily extends Family<AsyncValue<List<CountryModel>>> {
   const CountriesFamily();
 
   /// See also [countries].
-  CountriesProvider call(
+  CountriesProvider call([
     String? query,
-  ) {
+  ]) {
     return CountriesProvider(
       query,
     );
@@ -74,9 +74,9 @@ class CountriesFamily extends Family<AsyncValue<List<CountryModel>>> {
 /// See also [countries].
 class CountriesProvider extends AutoDisposeFutureProvider<List<CountryModel>> {
   /// See also [countries].
-  CountriesProvider(
+  CountriesProvider([
     String? query,
-  ) : this._internal(
+  ]) : this._internal(
           (ref) => countries(
             ref as CountriesRef,
             query,
