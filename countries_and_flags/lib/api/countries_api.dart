@@ -1,0 +1,17 @@
+import 'package:countries_and_flags/api/models/country_api_model.dart';
+import 'package:dio/dio.dart';
+
+class CountriesApi {
+  const CountriesApi(this.client);
+  final Dio client;
+
+  Future<List<CountryApiModel>> fetchAll() async {
+    final response = await client.get("/all?fields=name,flags,cca2");
+    return response.data.map(CountryApiModel.fromJson).toList();
+  }
+
+  Future<List<CountryApiModel>> search(String query) async {
+    final response = await client.get("/name/$query?fields=name,flags,cca2");
+    return response.data.map(CountryApiModel.fromJson).toList();
+  }
+}

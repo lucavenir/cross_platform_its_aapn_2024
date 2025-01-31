@@ -8,7 +8,7 @@ part 'http_client_provider.g.dart';
 
 @riverpod
 Dio httpClient(Ref ref) {
-  final options = BaseOptions(baseUrl: 'https://restcountries.com/v3.1/');
+  final options = BaseOptions(baseUrl: 'https://restcountries.com/v3.1');
   final client = Dio(options);
   ref.onDispose(client.close);
 
