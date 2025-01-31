@@ -19,6 +19,7 @@ class DetailDialog extends ConsumerWidget {
         title: Text(country.longName),
         actions: [
           IconButton(
+            color: Colors.red,
             onPressed: () {
               ref.read(favoriteNotifierProvider.notifier).toggle(country);
             },
@@ -27,12 +28,21 @@ class DetailDialog extends ConsumerWidget {
         ],
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Semantics(
             label: country.flagAlt,
-            child: Image.network(country.flagUrl),
+            child: SizedBox(
+              height: 200,
+              child: Image.network(country.flagUrl),
+            ),
           ),
-          Text("${country.cca2} - ${country.shortName}")
+          const SizedBox(height: 24),
+          Text(
+            "${country.cca2} - ${country.shortName}",
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );

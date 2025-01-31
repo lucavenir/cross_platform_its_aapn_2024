@@ -20,6 +20,12 @@ class FavoritesPage extends ConsumerWidget {
             ListTile(
               leading: Text(favorite.id),
               title: Text(favorite.longName),
+              trailing: IconButton(
+                onPressed: () {
+                  ref.read(favoriteNotifierProvider.notifier).remove(favorite);
+                },
+                icon: const Icon(Icons.favorite),
+              ),
             )
         ],
       ),

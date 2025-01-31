@@ -17,11 +17,17 @@ class CountriesApi {
 
   Future<List<CountryApiModel>> fetchAll() async {
     final response = await client.get("/all?fields=name,flags,cca2");
-    return response.data.map(CountryApiModel.fromJson).toList();
+    return [
+      for (final element in response.data) //
+        CountryApiModel.fromJson(element),
+    ];
   }
 
   Future<List<CountryApiModel>> search(String query) async {
     final response = await client.get("/name/$query?fields=name,flags,cca2");
-    return response.data.map(CountryApiModel.fromJson).toList();
+    return [
+      for (final element in response.data) //
+        CountryApiModel.fromJson(element),
+    ];
   }
 }

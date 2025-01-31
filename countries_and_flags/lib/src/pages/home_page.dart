@@ -44,6 +44,7 @@ class HomePage extends ConsumerWidget {
               children: [
                 for (final country in value)
                   Stack(
+                    alignment: Alignment.center,
                     children: [
                       InkWell(
                         onTap: () {
@@ -56,25 +57,36 @@ class HomePage extends ConsumerWidget {
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("${country.shortName}"),
+                              Text(country.shortName),
                               Semantics(
                                 label: country.flagAlt,
-                                child: Image.network(country.flagUrl),
+                                child: AspectRatio(
+                                  aspectRatio: 4 / 3,
+                                  child: Image.network(country.flagUrl),
+                                ),
                               )
                             ],
                           ),
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {
-                          ref
-                              .read(favoriteNotifierProvider.notifier)
-                              .toggle(country);
-                        },
-                        icon: Icon(
-                          favorites.contains(country)
-                              ? Icons.favorite
-                              : Icons.favorite_border,
+                      Positioned(
+                        top: 4,
+                        right: 4,
+                        child: IconButton(
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.white,
+                          ),
+                          color: Colors.red,
+                          onPressed: () {
+                            ref
+                                .read(favoriteNotifierProvider.notifier)
+                                .toggle(country);
+                          },
+                          icon: Icon(
+                            favorites.contains(country)
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                          ),
                         ),
                       )
                     ],
